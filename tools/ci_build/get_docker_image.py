@@ -1,3 +1,7 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
+# This file is used by Linux GPU(cuda10.2) Validation Pipeline,Linux Multi GPU CI Pipeline,Linux TensorRT Packaging Pipeline,Node.js binding,Python Packaging Pipeline (Training CPU),Python Packaging Pipeline (Training Torch 1.8.1 Cuda 10.2),Python Packaging Pipeline (Training Torch 1.8.1 Cuda 11.1),Python Packaging Pipeline (Training Torch 1.9.0 Cuda 10.2),Python Packaging Pipeline (Training Torch 1.9.0 Cuda 11.1),Python Packaging Pipeline (Training Torch 1.9.0 Cuda 11.4),Python packaging pipeline,Zip-Nuget Packaging NoContribOps Pipeline,Zip-Nuget-Java Packaging Pipeline,Linux CPU CI Pipeline,Linux CPU Minimal Build E2E CI Pipeline,Linux CPU x64 NoContribops CI Pipeline,Linux DNNL CI Pipeline,Linux GPU CI Pipeline,Linux GPU TensorRT CI Pipeline,Python Package Pipeline (Training for Rocm),onnxruntime-CI Eager Mode Test V3,orttraining-linux-ci-pipeline
 #!/usr/bin/env python3
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.

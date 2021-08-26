@@ -19,6 +19,12 @@ steps:
   - template: with-container-registry-steps.yml
     parameters:
       Steps:
+      - task: UsePythonVersion@0
+        inputs:
+          versionSpec: '3.9'
+          addToPath: true
+          architecture: 'x64'
+        displayName: "Add Python 3.9 to PATH"
       - task: PythonScript@0
         displayName: 'Get ${{ parameters.Repository }} image for ${{ parameters.Dockerfile }}'
         inputs:
@@ -32,6 +38,13 @@ steps:
           workingDirectory: '$(Build.BinariesDirectory)'
       ContainerRegistry: onnxruntimebuildcache
 - ${{ if eq(parameters.UseImageCacheContainerRegistry, false) }}:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.9'
+      addToPath: true
+      architecture: 'x64'
+    displayName: "Add Python 3.9 to PATH"
+
   - task: PythonScript@0
     displayName: "Get ${{ parameters.Repository }} image for ${{ parameters.Dockerfile }}"
     inputs:
