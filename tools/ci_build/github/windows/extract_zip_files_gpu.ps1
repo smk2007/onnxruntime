@@ -1,7 +1,10 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-# extract *-cuda-*.zip and *-tensorrt-*.zip
+# This file is used by Zip-Nuget-Java Packaging Pipeline
+# for creating a combined zip/tarball package with both TensorRT and CUDA EP.
+
+# First, extract *-cuda-*.zip and *-tensorrt-*.zip
 Get-ChildItem $Env:BUILD_BINARIESDIRECTORY\zip-artifacts -Filter *.zip | 
 Foreach-Object {
  $cmd = "7z.exe x $($_.FullName) -y -o$Env:BUILD_BINARIESDIRECTORY\zip-artifacts"
