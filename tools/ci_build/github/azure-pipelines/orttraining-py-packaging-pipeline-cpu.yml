@@ -38,7 +38,7 @@ stages:
           DockerBuildArgs: >-
             --build-arg PYTHON_VERSION=$(PythonVersion)
             --build-arg INSTALL_DEPS_EXTRA_ARGS=-tu
-            --build-arg BUILD_UID=$(id -u)
+            --build-arg BUILD_UID=$UID
           Repository: onnxruntimetrainingcpubuild
 
       - task: CmdLine@2

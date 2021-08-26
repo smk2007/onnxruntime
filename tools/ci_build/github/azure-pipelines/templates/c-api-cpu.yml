@@ -67,7 +67,7 @@ jobs:
       parameters:
         Dockerfile: tools/ci_build/github/linux/docker/inference/x86_64/default/cpu/Dockerfile
         Context: tools/ci_build/github/linux/docker/inference/x86_64/default/cpu
-        DockerBuildArgs: "--build-arg BUILD_UID=$( id -u ) --build-arg BASEIMAGE=$(BASE_IMAGE)"
+        DockerBuildArgs: "--build-arg BUILD_UID=$UID --build-arg BASEIMAGE=$(BASE_IMAGE)"
         Repository: onnxruntimecpubuildcentos7$(ONNXRUNTIME_ARCH)
 
     - task: CmdLine@2
