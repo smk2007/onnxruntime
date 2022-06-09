@@ -18,22 +18,28 @@ class VariableOutputDataTypeBase : public OpKernel {
 };
 
 class HannWindow final : public VariableOutputDataTypeBase {
+ bool is_periodic_ = true;
  public:
   explicit HannWindow(const OpKernelInfo& info) : VariableOutputDataTypeBase(info) {
+    is_periodic_ = static_cast<bool>(info.GetAttrOrDefault<int64_t>("periodic", 1));
   }
   Status Compute(OpKernelContext* ctx) const override;
 };
 
 class HammingWindow final : public VariableOutputDataTypeBase {
+ bool is_periodic_ = true;
  public:
   explicit HammingWindow(const OpKernelInfo& info) : VariableOutputDataTypeBase(info) {
+    is_periodic_ = static_cast<bool>(info.GetAttrOrDefault<int64_t>("periodic", 1));
   }
   Status Compute(OpKernelContext* ctx) const override;
 };
 
 class BlackmanWindow final : public VariableOutputDataTypeBase {
+ bool is_periodic_ = true;
  public:
   explicit BlackmanWindow(const OpKernelInfo& info) : VariableOutputDataTypeBase(info) {
+    is_periodic_ = static_cast<bool>(info.GetAttrOrDefault<int64_t>("periodic", 1));
   }
   Status Compute(OpKernelContext* ctx) const override;
 };
